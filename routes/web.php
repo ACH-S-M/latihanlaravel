@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\produk;
 use App\Http\Controllers\users;
 use Illuminate\Support\Facades\Route;
 
@@ -13,8 +14,5 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[produk::class,'getProduk']);
 Route::get('/admin',[users::class,'getAdmin']);

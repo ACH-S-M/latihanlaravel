@@ -6,27 +6,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@section('title','Penjualan')</title>
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body>
     @section('content')
     <div class="container p-12 bg-" >
-            @component('layout.alert')
-                @slot('class')
-                    bg-yellow-400
+           @component('layout.card')
+                @slot('img')
+                    data:image/jpeg;base64,{{ base64_encode($produk->foto_produk) }}
                 @endslot
-                @slot('judul')
-                     Hari ini hari 
+                @slot('nama')
+                    {{$produk->nama_produk}}
                 @endslot
-                @slot('isi')
-                        Eak
+                @slot('harga')
+                    {{$produk->harga_produk}}
                 @endslot
-            @endcomponent
-                    @component('layout.alert',['class' => 'bg-blue-200','judul' => 'Ini judul','isi' => 'terlalu lama '])
-                    @endcomponent
-
+           @endcomponent
     </div>
      @endsection
-   
+
 </body>
 </html>
