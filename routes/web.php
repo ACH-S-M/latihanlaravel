@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\produk;
-use App\Http\Controllers\users;
+use App\Http\Controllers\User\users;
 use Illuminate\Support\Facades\Route;
 
 /*
